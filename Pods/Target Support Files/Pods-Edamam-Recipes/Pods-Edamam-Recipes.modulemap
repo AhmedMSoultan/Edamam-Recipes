@@ -1,0 +1,6 @@
+framework module Pods_Edamam_Recipes {
+  umbrella header "Pods-Edamam-Recipes-umbrella.h"
+
+  export *
+  module * { export * }
+}
