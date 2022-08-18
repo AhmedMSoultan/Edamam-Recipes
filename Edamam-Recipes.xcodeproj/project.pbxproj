@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0A2E65E828AEA3EC00C23194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E65E728AEA3EC00C23194 /* AppDelegate.swift */; };
 		0A2E65EA28AEA3EC00C23194 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E65E928AEA3EC00C23194 /* SceneDelegate.swift */; };
-		0A2E65EC28AEA3EC00C23194 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E65EB28AEA3EC00C23194 /* ViewController.swift */; };
 		0A2E65EF28AEA3EC00C23194 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A2E65ED28AEA3EC00C23194 /* Main.storyboard */; };
 		0A2E65F228AEA3EC00C23194 /* Edamam_Recipes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E65F028AEA3EC00C23194 /* Edamam_Recipes.xcdatamodeld */; };
 		0A2E65F428AEA3EE00C23194 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A2E65F328AEA3EE00C23194 /* Assets.xcassets */; };
@@ -17,6 +16,17 @@
 		0A2E660228AEA3EE00C23194 /* Edamam_RecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E660128AEA3EE00C23194 /* Edamam_RecipesTests.swift */; };
 		0A2E660C28AEA3EE00C23194 /* Edamam_RecipesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E660B28AEA3EE00C23194 /* Edamam_RecipesUITests.swift */; };
 		0A2E660E28AEA3EE00C23194 /* Edamam_RecipesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E660D28AEA3EE00C23194 /* Edamam_RecipesUITestsLaunchTests.swift */; };
+		0A2E662528AEB04700C23194 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E662428AEB04700C23194 /* HomeVC.swift */; };
+		0A2E662F28AEB27D00C23194 /* RecipesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E662D28AEB27D00C23194 /* RecipesTableViewCell.swift */; };
+		0A2E663028AEB27D00C23194 /* RecipesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2E662E28AEB27D00C23194 /* RecipesTableViewCell.xib */; };
+		0A2E663328AEB2AB00C23194 /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E663128AEB2AB00C23194 /* CategoriesCollectionViewCell.swift */; };
+		0A2E663428AEB2AB00C23194 /* CategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2E663228AEB2AB00C23194 /* CategoriesCollectionViewCell.xib */; };
+		0A2E663828AEB78600C23194 /* RecipeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E663628AEB78600C23194 /* RecipeDetailsVC.swift */; };
+		0A2E663928AEB78600C23194 /* RecipeDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2E663728AEB78600C23194 /* RecipeDetailsVC.xib */; };
+		0A2E663C28AEBFB400C23194 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E663B28AEBFB400C23194 /* URLs.swift */; };
+		0A2E663F28AEBFD500C23194 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E663E28AEBFD500C23194 /* NetworkLayer.swift */; };
+		0A2E664228AECF7900C23194 /* RecipesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E664128AECF7900C23194 /* RecipesResponse.swift */; };
+		0A2E664428AED0D300C23194 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E664328AED0D300C23194 /* HomeVM.swift */; };
 		475805559085105AABE4FA0C /* Pods_Edamam_Recipes_Edamam_RecipesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96775123829AAEF09CF74E39 /* Pods_Edamam_Recipes_Edamam_RecipesUITests.framework */; };
 		72569F3524E03430452DAF95 /* Pods_Edamam_Recipes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF1CDD15317076BFE346727 /* Pods_Edamam_Recipes.framework */; };
 		F78756499C7E59F7EF1E491C /* Pods_Edamam_RecipesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A2C1190C9148FF1D68AFDB /* Pods_Edamam_RecipesTests.framework */; };
@@ -43,7 +53,6 @@
 		0A2E65E428AEA3EC00C23194 /* Edamam-Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Edamam-Recipes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A2E65E728AEA3EC00C23194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A2E65E928AEA3EC00C23194 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0A2E65EB28AEA3EC00C23194 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0A2E65EE28AEA3EC00C23194 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A2E65F128AEA3EC00C23194 /* Edamam_Recipes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Edamam_Recipes.xcdatamodel; sourceTree = "<group>"; };
 		0A2E65F328AEA3EE00C23194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +63,17 @@
 		0A2E660728AEA3EE00C23194 /* Edamam-RecipesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Edamam-RecipesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A2E660B28AEA3EE00C23194 /* Edamam_RecipesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edamam_RecipesUITests.swift; sourceTree = "<group>"; };
 		0A2E660D28AEA3EE00C23194 /* Edamam_RecipesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edamam_RecipesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0A2E662428AEB04700C23194 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		0A2E662D28AEB27D00C23194 /* RecipesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTableViewCell.swift; sourceTree = "<group>"; };
+		0A2E662E28AEB27D00C23194 /* RecipesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipesTableViewCell.xib; sourceTree = "<group>"; };
+		0A2E663128AEB2AB00C23194 /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A2E663228AEB2AB00C23194 /* CategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCollectionViewCell.xib; sourceTree = "<group>"; };
+		0A2E663628AEB78600C23194 /* RecipeDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsVC.swift; sourceTree = "<group>"; };
+		0A2E663728AEB78600C23194 /* RecipeDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeDetailsVC.xib; sourceTree = "<group>"; };
+		0A2E663B28AEBFB400C23194 /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		0A2E663E28AEBFD500C23194 /* NetworkLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		0A2E664128AECF7900C23194 /* RecipesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesResponse.swift; sourceTree = "<group>"; };
+		0A2E664328AED0D300C23194 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		2FCAE9C13D668879B747DFB3 /* Pods-Edamam-RecipesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edamam-RecipesTests.debug.xcconfig"; path = "Target Support Files/Pods-Edamam-RecipesTests/Pods-Edamam-RecipesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		96775123829AAEF09CF74E39 /* Pods_Edamam_Recipes_Edamam_RecipesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Edamam_Recipes_Edamam_RecipesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97EC3A83C2D6752223318502 /* Pods-Edamam-Recipes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edamam-Recipes.debug.xcconfig"; path = "Target Support Files/Pods-Edamam-Recipes/Pods-Edamam-Recipes.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,14 +138,14 @@
 		0A2E65E628AEA3EC00C23194 /* Edamam-Recipes */ = {
 			isa = PBXGroup;
 			children = (
-				0A2E65E728AEA3EC00C23194 /* AppDelegate.swift */,
-				0A2E65E928AEA3EC00C23194 /* SceneDelegate.swift */,
-				0A2E65EB28AEA3EC00C23194 /* ViewController.swift */,
-				0A2E65ED28AEA3EC00C23194 /* Main.storyboard */,
-				0A2E65F328AEA3EE00C23194 /* Assets.xcassets */,
-				0A2E65F528AEA3EE00C23194 /* LaunchScreen.storyboard */,
+				0A2E662028AEAF9700C23194 /* Delegates */,
+				0A2E661E28AEAF7100C23194 /* Resources */,
+				0A2E663A28AEBFB400C23194 /* Helper */,
+				0A2E661F28AEAF8800C23194 /* PONSOs */,
+				0A2E661D28AEAF5300C23194 /* View Models */,
+				0A2E661B28AEAF4000C23194 /* Models */,
+				0A2E661A28AEAF3800C23194 /* Views */,
 				0A2E65F828AEA3EE00C23194 /* Info.plist */,
-				0A2E65F028AEA3EC00C23194 /* Edamam_Recipes.xcdatamodeld */,
 			);
 			path = "Edamam-Recipes";
 			sourceTree = "<group>";
@@ -147,6 +167,144 @@
 			path = "Edamam-RecipesUITests";
 			sourceTree = "<group>";
 		};
+		0A2E661A28AEAF3800C23194 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E662128AEAFC600C23194 /* Storyboards */,
+				0A2E662228AEAFDE00C23194 /* View Controllers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0A2E661B28AEAF4000C23194 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E663D28AEBFD500C23194 /* Network Layer */,
+				0A2E664028AEBFDF00C23194 /* Core Data */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0A2E661D28AEAF5300C23194 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E664328AED0D300C23194 /* HomeVM.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		0A2E661E28AEAF7100C23194 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E65F328AEA3EE00C23194 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0A2E661F28AEAF8800C23194 /* PONSOs */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E664128AECF7900C23194 /* RecipesResponse.swift */,
+			);
+			path = PONSOs;
+			sourceTree = "<group>";
+		};
+		0A2E662028AEAF9700C23194 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E65E728AEA3EC00C23194 /* AppDelegate.swift */,
+				0A2E65E928AEA3EC00C23194 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		0A2E662128AEAFC600C23194 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E65ED28AEA3EC00C23194 /* Main.storyboard */,
+				0A2E65F528AEA3EE00C23194 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		0A2E662228AEAFDE00C23194 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E662328AEB00500C23194 /* Home Screen */,
+				0A2E663528AEB74100C23194 /* Recipe Details Screen */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		0A2E662328AEB00500C23194 /* Home Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E662628AEB1E100C23194 /* Cells */,
+				0A2E662428AEB04700C23194 /* HomeVC.swift */,
+			);
+			path = "Home Screen";
+			sourceTree = "<group>";
+		};
+		0A2E662628AEB1E100C23194 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E662828AEB1FB00C23194 /* Collection Cell */,
+				0A2E662728AEB1F000C23194 /* Table Cell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0A2E662728AEB1F000C23194 /* Table Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E662D28AEB27D00C23194 /* RecipesTableViewCell.swift */,
+				0A2E662E28AEB27D00C23194 /* RecipesTableViewCell.xib */,
+			);
+			path = "Table Cell";
+			sourceTree = "<group>";
+		};
+		0A2E662828AEB1FB00C23194 /* Collection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E663128AEB2AB00C23194 /* CategoriesCollectionViewCell.swift */,
+				0A2E663228AEB2AB00C23194 /* CategoriesCollectionViewCell.xib */,
+			);
+			path = "Collection Cell";
+			sourceTree = "<group>";
+		};
+		0A2E663528AEB74100C23194 /* Recipe Details Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E663628AEB78600C23194 /* RecipeDetailsVC.swift */,
+				0A2E663728AEB78600C23194 /* RecipeDetailsVC.xib */,
+			);
+			path = "Recipe Details Screen";
+			sourceTree = "<group>";
+		};
+		0A2E663A28AEBFB400C23194 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E663B28AEBFB400C23194 /* URLs.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		0A2E663D28AEBFD500C23194 /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E663E28AEBFD500C23194 /* NetworkLayer.swift */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		0A2E664028AEBFDF00C23194 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E65F028AEA3EC00C23194 /* Edamam_Recipes.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 		1754E68E62C5CB55064D7899 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +315,6 @@
 				2FCAE9C13D668879B747DFB3 /* Pods-Edamam-RecipesTests.debug.xcconfig */,
 				E6815285D03D4B47278E9762 /* Pods-Edamam-RecipesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -280,6 +437,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A2E663028AEB27D00C23194 /* RecipesTableViewCell.xib in Resources */,
+				0A2E663928AEB78600C23194 /* RecipeDetailsVC.xib in Resources */,
+				0A2E663428AEB2AB00C23194 /* CategoriesCollectionViewCell.xib in Resources */,
 				0A2E65F728AEA3EE00C23194 /* LaunchScreen.storyboard in Resources */,
 				0A2E65F428AEA3EE00C23194 /* Assets.xcassets in Resources */,
 				0A2E65EF28AEA3EC00C23194 /* Main.storyboard in Resources */,
@@ -410,10 +570,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A2E65EC28AEA3EC00C23194 /* ViewController.swift in Sources */,
+				0A2E663F28AEBFD500C23194 /* NetworkLayer.swift in Sources */,
+				0A2E664428AED0D300C23194 /* HomeVM.swift in Sources */,
+				0A2E663328AEB2AB00C23194 /* CategoriesCollectionViewCell.swift in Sources */,
 				0A2E65E828AEA3EC00C23194 /* AppDelegate.swift in Sources */,
+				0A2E662528AEB04700C23194 /* HomeVC.swift in Sources */,
+				0A2E663C28AEBFB400C23194 /* URLs.swift in Sources */,
+				0A2E663828AEB78600C23194 /* RecipeDetailsVC.swift in Sources */,
 				0A2E65F228AEA3EC00C23194 /* Edamam_Recipes.xcdatamodeld in Sources */,
 				0A2E65EA28AEA3EC00C23194 /* SceneDelegate.swift in Sources */,
+				0A2E662F28AEB27D00C23194 /* RecipesTableViewCell.swift in Sources */,
+				0A2E664228AECF7900C23194 /* RecipesResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
