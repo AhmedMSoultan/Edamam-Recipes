@@ -1,15 +1,17 @@
 //
-//  RecipesTableViewCell.swift
+//  HealthLabelTableViewCell.swift
 //  Edamam-Recipes
 //
-//  Created by Ahmed Soultan on 18/08/2022.
+//  Created by Ahmed Soultan on 20/08/2022.
 //
 
 import UIKit
 
-class RecipesTableViewCell: UITableViewCell {
+class HealthLabelTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var healthlabelName: UILabel!
     
-    static let cellIdentifier = "RecipesTableViewCell"
+    static let cellIdentifier = "HealthLabelTableViewCell"
     static let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
     
     override func awakeFromNib() {
@@ -20,6 +22,10 @@ class RecipesTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
+    }
+    
+    func setupCell(healthlabelName: String) {
+        self.healthlabelName.text = healthlabelName
     }
     
 }
