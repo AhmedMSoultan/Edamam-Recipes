@@ -37,6 +37,7 @@ struct Recipe : Codable {
     let url : String?
     let shareAs : String?
     let healthLabels : [String]?
+    let ingredientLines : [String]?
 
     enum CodingKeys: String, CodingKey {
         case title = "label"
@@ -45,5 +46,6 @@ struct Recipe : Codable {
         case url = "url"
         case shareAs = "shareAs"
         case healthLabels = "healthLabels"
+        case ingredientLines = "ingredientLines"
     }
 }

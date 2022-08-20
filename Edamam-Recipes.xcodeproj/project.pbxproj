@@ -31,6 +31,9 @@
 		0ADA6C0428B078330058DFF7 /* HealthLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA6C0228B078330058DFF7 /* HealthLabelTableViewCell.swift */; };
 		0ADA6C0528B078330058DFF7 /* HealthLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ADA6C0328B078330058DFF7 /* HealthLabelTableViewCell.xib */; };
 		0ADA6C0728B08A240058DFF7 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA6C0628B08A240058DFF7 /* UIViewController+Keyboard.swift */; };
+		0ADA6C0928B112F60058DFF7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA6C0828B112F60058DFF7 /* UIView+Extension.swift */; };
+		0ADA6C0D28B1152C0058DFF7 /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA6C0B28B1152C0058DFF7 /* IngredientsTableViewCell.swift */; };
+		0ADA6C0E28B1152C0058DFF7 /* IngredientsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ADA6C0C28B1152C0058DFF7 /* IngredientsTableViewCell.xib */; };
 		475805559085105AABE4FA0C /* Pods_Edamam_Recipes_Edamam_RecipesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96775123829AAEF09CF74E39 /* Pods_Edamam_Recipes_Edamam_RecipesUITests.framework */; };
 		72569F3524E03430452DAF95 /* Pods_Edamam_Recipes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF1CDD15317076BFE346727 /* Pods_Edamam_Recipes.framework */; };
 		F78756499C7E59F7EF1E491C /* Pods_Edamam_RecipesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A2C1190C9148FF1D68AFDB /* Pods_Edamam_RecipesTests.framework */; };
@@ -82,6 +85,9 @@
 		0ADA6C0228B078330058DFF7 /* HealthLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthLabelTableViewCell.swift; sourceTree = "<group>"; };
 		0ADA6C0328B078330058DFF7 /* HealthLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HealthLabelTableViewCell.xib; sourceTree = "<group>"; };
 		0ADA6C0628B08A240058DFF7 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		0ADA6C0828B112F60058DFF7 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		0ADA6C0B28B1152C0058DFF7 /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
+		0ADA6C0C28B1152C0058DFF7 /* IngredientsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsTableViewCell.xib; sourceTree = "<group>"; };
 		2FCAE9C13D668879B747DFB3 /* Pods-Edamam-RecipesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edamam-RecipesTests.debug.xcconfig"; path = "Target Support Files/Pods-Edamam-RecipesTests/Pods-Edamam-RecipesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		96775123829AAEF09CF74E39 /* Pods_Edamam_Recipes_Edamam_RecipesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Edamam_Recipes_Edamam_RecipesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97EC3A83C2D6752223318502 /* Pods-Edamam-Recipes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edamam-Recipes.debug.xcconfig"; path = "Target Support Files/Pods-Edamam-Recipes/Pods-Edamam-Recipes.debug.xcconfig"; sourceTree = "<group>"; };
@@ -285,6 +291,7 @@
 		0A2E663528AEB74100C23194 /* Recipe Details Screen */ = {
 			isa = PBXGroup;
 			children = (
+				0ADA6C0A28B114FA0058DFF7 /* Ingredients Cell */,
 				0A2E663628AEB78600C23194 /* RecipeDetailsVC.swift */,
 				0A2E663728AEB78600C23194 /* RecipeDetailsVC.xib */,
 			);
@@ -318,6 +325,7 @@
 		0ADA6BFE28B06C860058DFF7 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				0ADA6C0828B112F60058DFF7 /* UIView+Extension.swift */,
 				0ADA6BFF28B06CA10058DFF7 /* UIImageView+ConvertURL.swift */,
 				0ADA6C0628B08A240058DFF7 /* UIViewController+Keyboard.swift */,
 			);
@@ -331,6 +339,15 @@
 				0ADA6C0328B078330058DFF7 /* HealthLabelTableViewCell.xib */,
 			);
 			path = "Health Labels Table Cell";
+			sourceTree = "<group>";
+		};
+		0ADA6C0A28B114FA0058DFF7 /* Ingredients Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0ADA6C0B28B1152C0058DFF7 /* IngredientsTableViewCell.swift */,
+				0ADA6C0C28B1152C0058DFF7 /* IngredientsTableViewCell.xib */,
+			);
+			path = "Ingredients Cell";
 			sourceTree = "<group>";
 		};
 		1754E68E62C5CB55064D7899 /* Pods */ = {
@@ -469,6 +486,7 @@
 				0A2E663928AEB78600C23194 /* RecipeDetailsVC.xib in Resources */,
 				0A2E663428AEB2AB00C23194 /* CategoriesCollectionViewCell.xib in Resources */,
 				0A2E65F728AEA3EE00C23194 /* LaunchScreen.storyboard in Resources */,
+				0ADA6C0E28B1152C0058DFF7 /* IngredientsTableViewCell.xib in Resources */,
 				0A2E65F428AEA3EE00C23194 /* Assets.xcassets in Resources */,
 				0A2E65EF28AEA3EC00C23194 /* Main.storyboard in Resources */,
 				0ADA6C0528B078330058DFF7 /* HealthLabelTableViewCell.xib in Resources */,
@@ -602,10 +620,12 @@
 				0A2E663F28AEBFD500C23194 /* NetworkLayer.swift in Sources */,
 				0A2E664428AED0D300C23194 /* HomeVM.swift in Sources */,
 				0A2E663328AEB2AB00C23194 /* CategoriesCollectionViewCell.swift in Sources */,
+				0ADA6C0928B112F60058DFF7 /* UIView+Extension.swift in Sources */,
 				0A2E65E828AEA3EC00C23194 /* AppDelegate.swift in Sources */,
 				0A2E662528AEB04700C23194 /* HomeVC.swift in Sources */,
 				0A2E663C28AEBFB400C23194 /* URLs.swift in Sources */,
 				0A2E663828AEB78600C23194 /* RecipeDetailsVC.swift in Sources */,
+				0ADA6C0D28B1152C0058DFF7 /* IngredientsTableViewCell.swift in Sources */,
 				0A2E65F228AEA3EC00C23194 /* Edamam_Recipes.xcdatamodeld in Sources */,
 				0A2E65EA28AEA3EC00C23194 /* SceneDelegate.swift in Sources */,
 				0A2E662F28AEB27D00C23194 /* RecipesTableViewCell.swift in Sources */,

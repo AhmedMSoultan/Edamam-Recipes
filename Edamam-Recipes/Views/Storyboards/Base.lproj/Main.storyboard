@@ -27,7 +27,7 @@
                                 </view>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nes-z0-Qy9">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter recipe's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nes-z0-Qy9">
                                 <rect key="frame" x="24" y="52" width="366" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
@@ -90,7 +90,7 @@
     <resources>
         <image name="App-BG" width="1382" height="2073"/>
         <namedColor name="AccentColor">
-            <color red="0.6565877242521807" green="0.28623960191011188" blue="0.21209903881264355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.65700000524520874" green="0.28600001335144043" blue="0.21199999749660492" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

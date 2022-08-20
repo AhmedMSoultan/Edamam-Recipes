@@ -18,6 +18,9 @@ class HomeVC: UIViewController {
     var allRecipesModel: RecipesResponse?
     var errorMessage: String?
     var tableHits = [Hits]()
+    var filteredTableHits = [Hits]()
+    var filter = false
+    
     let filters = ["All",
                    "alcohol-cocktail",
                    "alcohol-free",
@@ -65,11 +68,14 @@ class HomeVC: UIViewController {
         filtersCollectionView.delegate = self
         filtersCollectionView.dataSource = self
         filtersCollectionView.register(CategoriesCollectionViewCell.cellNib, forCellWithReuseIdentifier: CategoriesCollectionViewCell.cellIdentifier)
+        
+        searchTF.delegate = self
     }
     
     private func onSuccess() {
         self.allRecipesModel = homeVM.model
         self.tableHits = self.allRecipesModel?.hits ?? [Hits]()
+        self.filteredTableHits = self.tableHits
         DispatchQueue.main.async {
             self.recipesTableView.reloadData()
         }
@@ -90,13 +96,23 @@ class HomeVC: UIViewController {
 
 extension HomeVC: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableHits.count
+        if !filteredTableHits.isEmpty {
+            return filteredTableHits.count
+        }
+        return filter ? 0 : tableHits.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let recipeCell = recipesTableView.dequeueReusableCell(withIdentifier: RecipesTableViewCell.cellIdentifier, for: indexPath) as! RecipesTableViewCell
-        if let recipe = tableHits[indexPath.row].recipe {
-            recipeCell.setupCell(recipe: recipe)
+        
+        if !filteredTableHits.isEmpty {
+            if let recipe = filteredTableHits[indexPath.row].recipe {
+                recipeCell.setupCell(recipe: recipe)
+            }
+        } else {
+            if let recipe = tableHits[indexPath.row].recipe {
+                recipeCell.setupCell(recipe: recipe)
+            }
         }
         return recipeCell
     }
@@ -106,6 +122,16 @@ extension HomeVC: UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = recipesTableView.cellForRow(at: indexPath) as! RecipesTableViewCell
+        let cellRecipe = cell.cellRecipe
+        
+        let detailsVC = RecipeDetailsVC()
+        detailsVC.cellRecipe = cellRecipe
+        
+        detailsVC.modalTransitionStyle = .crossDissolve
+        detailsVC.modalPresentationStyle = .fullScreen
+        self.present(detailsVC, animated: true, completion: nil)
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
@@ -142,38 +168,41 @@ extension HomeVC: UICollectionViewDelegate , UICollectionViewDataSource , UIColl
 }
 
 extension HomeVC: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let text = textField.text{
+            if (string.count == 1){
+                filterText(text: text + string)
+            } else {
+                if text.count > 2 {
+                    filterText(text: text)
+                } else if text.count == 2{
+                    filterText(text: text.first!.description)
+                }
+                else {
+                    filterText(text: string)
+                }
+            }
+        }
+        
+        return true
+    }
     
-}
-
-extension HomeVC {
-//    @objc func search()
-//    {
-//
-//        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.reload), object: nil)
-//        self.perform(#selector(self.reload), with: nil, afterDelay: 0.5)
-//    }
-    
-//    @objc func reload() {
-//        if let text = searchTF.text
-//        {
-//            if text.isEmpty{
-//
-//                resultArray.removeAll()
-//                childView.isHidden = false
-//                scrollViewOutlet.isHidden = false
-//                searchTableView.isHidden = true
-//                backBtnOutlet.tintColor = .opaqueSeparator
-//            }
-//            else
-//            {
-//            resultLabel.isHidden = true
-//            childView.isHidden = true
-//            scrollViewOutlet.isHidden = true
-//            filterText(query: text)
-//            searchText = text
-//            backBtnOutlet.tintColor = UIColor(rgb: 0x8F63FF)
-//
-//            }
-//        }
-//    }
+    func filterText(text: String){
+        filteredTableHits.removeAll()
+        for tableHit in tableHits {
+            if let recipeTitle = tableHit.recipe?.title {
+                if recipeTitle.lowercased().starts(with: text.lowercased()){
+                    filteredTableHits.append(tableHit)
+                }
+            }
+        }
+        
+        if text != "" {
+            filter = true
+        } else {
+            filter = false
+        }
+        
+        recipesTableView.reloadData()
+    }
 }

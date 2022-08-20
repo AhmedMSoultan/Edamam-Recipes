@@ -29,8 +29,6 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     
     func setSelected() {
         self.backgroundColor = UIColor.label
-        self.layer.borderColor = UIColor(named: "AccentColor")?.cgColor
-        self.layer.borderWidth = 2
     }
     
     func setUnSelected() {

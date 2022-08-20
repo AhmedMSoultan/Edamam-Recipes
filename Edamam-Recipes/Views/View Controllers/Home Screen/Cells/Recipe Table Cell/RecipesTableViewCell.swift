@@ -16,7 +16,7 @@ class RecipesTableViewCell: UITableViewCell {
     
     static let cellIdentifier = "RecipesTableViewCell"
     static let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
-    
+    var cellRecipe: Recipe?
     var healthLabels = [String]()
     
     override func awakeFromNib() {
@@ -39,6 +39,8 @@ class RecipesTableViewCell: UITableViewCell {
         self.layer.shadowOpacity = 0.1
         self.layer.shadowColor = UIColor.label.cgColor
         self.layer.shadowOffset = CGSize(width: 3, height: 3 )
+        
+        cellRecipe = recipe
         
         if let imageURL = recipe.image {
             recipeImage.setImageByKingFisher(url: imageURL, imageView: recipeImage)
@@ -63,8 +65,8 @@ extension RecipesTableViewCell: UITableViewDelegate , UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 20
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
