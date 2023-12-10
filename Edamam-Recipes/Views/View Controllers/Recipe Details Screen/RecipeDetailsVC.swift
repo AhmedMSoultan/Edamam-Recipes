@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class RecipeDetailsVC: UIViewController {
 
@@ -77,21 +78,22 @@ class RecipeDetailsVC: UIViewController {
     
     @IBAction func recipeWebsiteBtnAction(_ sender: UIButton) {
         if let websiteURL = cellRecipe?.url {
-            openWebsite(url: websiteURL)
+            openInSafariVC(url: websiteURL)
         }
     }
     
-    func openWebsite(url : String) {
-        guard let url = URL(string: url) else{return}
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            //If you want handle the completion block than
-            UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
-//                print("Open url : \(success)")
-            })
+    func openInSafariVC(url : String) {
+        if let url = URL(string: url) {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
         }
     }
 }
+
+
 
 extension RecipeDetailsVC: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

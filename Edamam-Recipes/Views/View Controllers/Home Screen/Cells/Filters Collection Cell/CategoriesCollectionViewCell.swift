@@ -28,7 +28,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     }
     
     func setSelected() {
-        self.backgroundColor = UIColor.label
+        self.backgroundColor = UIColor.white
     }
     
     func setUnSelected() {

@@ -43,7 +43,9 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        hideKeyboardWhenTappedAround()
         setupVM()
+        searchTF.keyboardType = UIKeyboardType.alphabet
     }
     
     private func setupVM() {
@@ -169,6 +171,9 @@ extension HomeVC: UICollectionViewDelegate , UICollectionViewDataSource , UIColl
 
 extension HomeVC: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let allowedCharacters = CharacterSet.letters.union(CharacterSet(charactersIn: " "))
+        let characterSet = CharacterSet(charactersIn: string)
+        
         if let text = textField.text{
             if (string.count == 1){
                 filterText(text: text + string)
@@ -183,8 +188,7 @@ extension HomeVC: UITextFieldDelegate {
                 }
             }
         }
-        
-        return true
+        return allowedCharacters.isSuperset(of: characterSet)
     }
     
     func filterText(text: String){
@@ -193,6 +197,15 @@ extension HomeVC: UITextFieldDelegate {
             if let recipeTitle = tableHit.recipe?.title {
                 if recipeTitle.lowercased().starts(with: text.lowercased()){
                     filteredTableHits.append(tableHit)
+                } else {
+                    if let recipeIngredients = tableHit.recipe?.ingredientLines {
+                        for ingredient in recipeIngredients {
+                            if ingredient.lowercased().starts(with: text.lowercased()) {
+                                filteredTableHits.append(tableHit)
+                                break
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -202,7 +215,6 @@ extension HomeVC: UITextFieldDelegate {
         } else {
             filter = false
         }
-        
         recipesTableView.reloadData()
     }
 }

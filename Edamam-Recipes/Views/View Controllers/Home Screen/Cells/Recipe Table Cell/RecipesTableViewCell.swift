@@ -17,7 +17,8 @@ class RecipesTableViewCell: UITableViewCell {
     static let cellIdentifier = "RecipesTableViewCell"
     static let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
     var cellRecipe: Recipe?
-    var healthLabels = [String]()
+    var healthLabels: [String]?
+    var healthLabelsCount = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -49,19 +50,22 @@ class RecipesTableViewCell: UITableViewCell {
         }
         recipeTitle.text = recipe.title ?? ""
         recipeSource.text = recipe.source ?? ""
-        self.healthLabels = recipe.healthLabels ?? [String]()
+        healthLabelsCount = recipe.healthLabels?.count ?? 0
+        healthLabels = recipe.healthLabels ?? [String]()
     }
     
 }
 
 extension RecipesTableViewCell: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return healthLabels.count
+        return healthLabelsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = healthLabelTable.dequeueReusableCell(withIdentifier: HealthLabelTableViewCell.cellIdentifier, for: indexPath) as! HealthLabelTableViewCell
-        cell.setupCell(healthlabelName: healthLabels[indexPath.row])
+        if indexPath.row < healthLabelsCount {
+            cell.setupCell(healthlabelName: healthLabels?[indexPath.row] ?? "")
+        }
         return cell
     }
     
